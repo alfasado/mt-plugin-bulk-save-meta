@@ -1,0 +1,12 @@
+name: BulkSaveMeta
+id:   BulkSaveMeta
+key:  bulksavemeta
+version: 0.1
+author_name: Alfasado Inc.
+author_link: http://alfasado.net/
+description: MySQL bulk inserts
+init: $bulksavemeta::BulkSaveMeta::Callbacks::initializer
+config_settings:
+    BulkInsertMeta:
+        default: 1
+        updatable: 1
