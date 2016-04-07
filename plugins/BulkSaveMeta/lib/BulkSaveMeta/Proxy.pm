@@ -128,7 +128,7 @@ sub save {
             $meta_obj->remove;
         }
         else {
-            serialize_blob( $field, $meta_obj ) if $meta_is_blob;
+            MT::Meta::Proxy::serialize_blob( $field, $meta_obj ) if $meta_is_blob;
             my $meta_class = $proxy->META_CLASS();
             if (! $bulk_insert ) {
                 {
@@ -141,7 +141,7 @@ sub save {
                     }
                 }
             }
-            unserialize_blob($meta_obj) if $meta_is_blob;
+            MT::Meta::Proxy::unserialize_blob($meta_obj) if $meta_is_blob;
         }
         unless ( ref $utf8_data ) {
             $meta_obj->$type( $utf8_data, { no_changed_flag => 1 } );
